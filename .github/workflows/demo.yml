@@ -19,7 +19,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     outputs:
-      scripts-file: ${{ steps.publish.outputs.script-file }}
+      script-file: ${{ steps.publish.outputs.script-file }}
     steps:
       - name: Get code
         uses: actions/checkout@v4
@@ -50,6 +50,6 @@ jobs:
       - name: Output contents
         run: ls 
       - name: Output filename
-        run: echo "${{ needs.build.outputs.scripts-file }}"
+        run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
         run: echo "Deploying..."
